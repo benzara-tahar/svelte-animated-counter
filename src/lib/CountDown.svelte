@@ -6,8 +6,10 @@
 	);
 	export let className = '';
 	export let interval = 1000;
+	export let startImmediately = false;
 	export let direction: 'up' | 'down' = 'down';
 	export let loop = true;
+	export let ease = 'cubic-bezier(1, 0, 0, 1)';
 	export let initialValue: string | number | undefined = undefined;
 
 	$: contentValues = values.join('\n');
@@ -17,37 +19,37 @@
 	let lastValue = initialValue ?? values[index];
 
 	onMount(() => {
-		let timer = setInterval(() => {
-			console.log(lastValue);
-			// clearInterval(timer);
-			// return;
+		// timer function
+		const start = () => {
 			index = values.indexOf(lastValue) + (direction === 'up' ? 1 : -1);
-			if (index === values.length) {
-				if (loop) {
-					index = 0;
-				} else {
-					clearInterval(timer);
-					return;
-				}
+
+			// terminate if we looped through all values && loop is false
+			if (!loop && (index === values.length || index === -1)) {
+				clearInterval(timer);
+				return;
 			}
-			if (index === -1) {
-				if (loop) {
-					index = values.length - 1;
-				} else {
-					clearInterval(timer);
-					return;
-				}
+			// ensure index is in range
+			if (loop && index === values.length) {
+				index = 0;
+			}
+			if (loop && index === -1) {
+				index = values.length - 1;
 			}
 
 			lastValue = values[index];
-		}, interval);
+		};
+
+		if (startImmediately) {
+			start();
+		}
+		let timer = setInterval(start, interval);
 
 		return () => clearInterval(timer);
 	});
 </script>
 
 <span class="sliding-text {className}">
-	<span style="--index: {index}; --interval: {intervalInMs}">
+	<span style="--index: {index}; --interval: {intervalInMs}; --ease:{ease}">
 		<span>{contentValues}</span>
 	</span>
 </span>
@@ -66,7 +68,7 @@
 	}
 	.sliding-text > span > span {
 		text-align: center;
-		transition: all var(--interval) cubic-bezier(1, 0, 0, 1);
+		transition: all var(--interval) var(--ease);
 		position: relative;
 		height: 100%;
 		white-space: pre;

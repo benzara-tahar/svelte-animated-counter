@@ -1,5 +1,6 @@
 {
-	"name": "@benzara/svelte-countdown",
+	"name": "@benzara/svelte-animated-counter",
+	"description": "Tiny animated counter library for svelte",
 	"version": "0.0.1",
 	"author": {
 		"name": "Benzara Tahar Benlahcene",
@@ -25,8 +26,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"exports": {
-		".": "./src/lib/CountDown.svelte",
-		"./CountDown.svelte": "./src/lib/CountDown.svelte"
+		".": "./index.ts"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.21.0",
