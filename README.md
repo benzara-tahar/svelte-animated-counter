@@ -1,38 +1,79 @@
-# create-svelte
+# svelte-animated-counter
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A tiny css-agnostic animated counter for Svelte
 
-## Creating a project
+## Installation 🔧
 
-If you're seeing this, you've probably already done this step. Congrats!
+npm
 
-```bash
-# create a new project in the current directory
-npm init svelte
-
-# create a new project in my-app
-npm init svelte my-app
+```sh
+npm install @benzara/svelte-animated-counter
 ```
 
-## Developing
+or yarn
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```sh
+yarn install @benzara/svelte-animated-counter
 ```
 
-## Building
+## Features ✨
 
-To create a production version of your app:
+- No dependencies
+- CSS agnostic (custom styling)
+- less than 1Kb minified
+- works for svelte and svelte-kit
+- Customisable (see options below)
 
-```bash
-npm run build
+## How to use 🚀
+
+1. First import the component on your svelte page's script section.
+
+```js
+import AnimatedCounter from '@benzara/svelte-animated-counter';
 ```
 
-You can preview the production build with `npm run preview`.
+2. Call the component where you want it to be placed e.g.:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```jsx
+<AnimatedCounter
+	values={Array.from({ length: 122 }, (_, i) => (1900 + i).toString())}
+	className="custom-counter"
+	interval={1000}
+	startImmediately={false}
+	direction="down"
+	loop={true}
+	ease="cubic-bezier(0.25, 0.1, 0.25, 1)"
+	initialValue="2008"
+/>
+```
+
+### Configuration Options
+
+| Name             | Default                    | Description                                                                                         |
+| ---------------- | -------------------------- | --------------------------------------------------------------------------------------------------- |
+| values           | `['000',..., '100']`       | list of values to animate                                                                           |
+| className        | `''`                       | optional class name to customize the counter                                                        |
+| interval         | `1000`                     | counter interval between each step in milliseconds, defaults to `1000`                              |
+| startImmediately | `false`                    | whether to start the counter immediately or wait for the `interval` to pass, defaults to `false`    |
+| direction        | 'down'                     | counter direction, can be `up` or `down` defaults to `down`                                         |
+| loop             | `true`                     | whether to loop the counter animation after reaching the end of `values` array , defaults to `true` |
+| ease             | `cubic-bezier(1, 0, 0, 1)` | easing function to use, defaults to `cubic-bezier(1, 0, 0, 1)`                                      |
+| initialValue     | `undefined`                | optional initial value to start the counter from                                                    |
+
+## Contribution 🖇️
+
+Feel free to fork. If you find a bug or got something great to add make a pull request!
+
+## Authors ✒️
+
+**Benzara Tahar Benlahcene** - _ Initial Work _ - [benzara-tahar](https://github.com/benzara-tahar)
+
+You can also look at the list of all the [contributors](https://github.com/benzara-tahar/svelte-animated-counter/contributors) who have participated in this project.
+
+## License 📄
+
+This project is free to use, edit & distribute under the MIT License.
+
+---
+
+⌨️ with ❤️ by [benzara-tahar](https://github.com/benzara-tahar) 😊
