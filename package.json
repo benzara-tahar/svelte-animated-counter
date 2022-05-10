@@ -9,7 +9,9 @@
 	},
 	"keywords": [
 		"countdown",
+		"countup",
 		"counter",
+		"animated",
 		"timer",
 		"svelte"
 	],

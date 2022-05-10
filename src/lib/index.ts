@@ -1,1 +1,1 @@
-export { default as CountDown } from './CountDown.svelte';
+export { default as AnimatedCounter } from './AnimatedCounter.svelte';

@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-	import CountDown from '$lib/CountDown.svelte';
+	import AnimatedCounter from '$lib/AnimatedCounter.svelte';
 
 	const intValues = Array.from({ length: 10 }, (_, i) => new String(i).padStart(2, '0'));
 	const skillsValues = ['Creative', 'FullStak', 'Frontend', 'Backend'];
@@ -18,8 +18,8 @@
 </script>
 
 <svelte:head>
-	<title>Animated Countdown</title>
-	<meta name="description" content="Tiny animated countdown library for svelte" />
+	<title>Svelte Animated Counter</title>
+	<meta name="description" content="Tiny animated counter library for svelte" />
 </svelte:head>
 
 <section>
@@ -29,7 +29,7 @@
 
 	<h1>demo</h1>
 	<h2>Numeric Values</h2>
-	<CountDown values={intValues} />
+	<AnimatedCounter values={intValues} />
 
 	<h2>Skills</h2>
 	<div
@@ -37,17 +37,17 @@
 	align-items: center;"
 	>
 		Hello, it's me a [
-		<CountDown values={skillsValues} direction="up" className="custom-skill" />
+		<AnimatedCounter values={skillsValues} direction="up" className="custom-skill" />
 		] developer
 	</div>
 	<h2>ShortMonths Values</h2>
-	<CountDown direction="up" values={shortMonthsValues} />
+	<AnimatedCounter direction="up" values={shortMonthsValues} />
 	<h2>LongMonth Values</h2>
-	<CountDown values={longMonthValues} />
+	<AnimatedCounter values={longMonthValues} />
 	<h2>Years Values</h2>
-	<CountDown initialValue={'2002'} direction="up" values={yearsValues} />
+	<AnimatedCounter initialValue={'2002'} direction="up" values={yearsValues} />
 	<h2>Custom Style</h2>
-	<CountDown
+	<AnimatedCounter
 		className="custom-counter"
 		direction="up"
 		initialValue={'2002'}
@@ -57,7 +57,7 @@
 	/>
 
 	<h2>Custom easing</h2>
-	<CountDown
+	<AnimatedCounter
 		direction="up"
 		initialValue={'2002'}
 		values={yearsValues}
@@ -78,7 +78,7 @@
 	<br />
 
 	<h2>Custom interval</h2>
-	<CountDown direction="up" initialValue={'2002'} values={yearsValues} interval={500} />
+	<AnimatedCounter direction="up" initialValue={'2002'} values={yearsValues} interval={500} />
 
 	<br />
 

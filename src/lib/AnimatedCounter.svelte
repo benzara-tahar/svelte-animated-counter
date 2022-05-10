@@ -1,15 +1,40 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	/**
+	 * list of values to animate
+	 */
 	export let values: Array<string | number> = Array.from({ length: 100 }, (_, i) =>
 		new String(i).padStart(3, '0')
 	);
+	/**
+	 * optional class name to customize the counter
+	 */
 	export let className = '';
+	/**
+	 * counter interval between each step in milliseconds, defaults to `1000`
+	 */
 	export let interval = 1000;
+	/**
+	 * whether to start the counter immediately or wait for the `interval` to pass, defaults to `false`
+	 */
 	export let startImmediately = false;
+
+	/**
+	 * counter direction, can be `up` or `down` defaults to `down`
+	 */
 	export let direction: 'up' | 'down' = 'down';
+	/**
+	 * whether to loop the counter animation after reaching the end of  `values` array , defaults to `true`
+	 */
 	export let loop = true;
+	/**
+	 * easing function to use, defaults to `cubic-bezier(1, 0, 0, 1)`
+	 */
 	export let ease = 'cubic-bezier(1, 0, 0, 1)';
+	/**
+	 * optional initial value to start the counter from
+	 */
 	export let initialValue: string | number | undefined = undefined;
 
 	$: contentValues = values.join('\n');

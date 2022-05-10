@@ -1,3 +1,3 @@
-import CountDown from './lib/CountDown.svelte';
+import AnimatedCounter from './lib/AnimatedCounter.svelte';
 
-export default CountDown;
+export default AnimatedCounter;
