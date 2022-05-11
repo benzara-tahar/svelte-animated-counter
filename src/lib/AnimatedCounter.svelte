@@ -8,10 +8,6 @@
 		new String(i).padStart(3, '0')
 	);
 	/**
-	 * optional class name to customize the counter
-	 */
-	export let className = '';
-	/**
 	 * counter interval between each step in milliseconds, defaults to `1000`
 	 */
 	export let interval = 1000;
@@ -73,7 +69,7 @@
 	});
 </script>
 
-<span class="sliding-text {className}">
+<span class="sliding-text {$$props.class}">
 	<span style="--index: {index}; --interval: {intervalInMs}; --ease:{ease}">
 		<span>{contentValues}</span>
 	</span>

@@ -29,7 +29,7 @@ yarn install @benzara/svelte-animated-counter
 1. First import the component on your svelte page's script section.
 
 ```js
-import AnimatedCounter from '@benzara/svelte-animated-counter';
+import { AnimatedCounter } from '@benzara/svelte-animated-counter';
 ```
 
 2. Call the component where you want it to be placed e.g.:
@@ -37,7 +37,7 @@ import AnimatedCounter from '@benzara/svelte-animated-counter';
 ```jsx
 <AnimatedCounter
 	values={Array.from({ length: 122 }, (_, i) => (1900 + i).toString())}
-	className="custom-counter"
+	class="custom-counter"
 	interval={1000}
 	startImmediately={false}
 	direction="down"
@@ -52,7 +52,6 @@ import AnimatedCounter from '@benzara/svelte-animated-counter';
 | Name             | Default                    | Description                                                                                         |
 | ---------------- | -------------------------- | --------------------------------------------------------------------------------------------------- |
 | values           | `['000',..., '100']`       | list of values to animate                                                                           |
-| className        | `''`                       | optional class name to customize the counter                                                        |
 | interval         | `1000`                     | counter interval between each step in milliseconds, defaults to `1000`                              |
 | startImmediately | `false`                    | whether to start the counter immediately or wait for the `interval` to pass, defaults to `false`    |
 | direction        | 'down'                     | counter direction, can be `up` or `down` defaults to `down`                                         |
@@ -66,7 +65,8 @@ Feel free to fork. If you find a bug or got something great to add make a pull r
 
 ## Authors ✒️
 
-**Benzara Tahar Benlahcene** - _ Initial Work _ - [benzara-tahar](https://github.com/benzara-tahar)
+**Benzara Tahar Benlahcene**
+[benzara-tahar](https://github.com/benzara-tahar)
 
 You can also look at the list of all the [contributors](https://github.com/benzara-tahar/svelte-animated-counter/contributors) who have participated in this project.
 
