@@ -4,16 +4,10 @@ A tiny css-agnostic animated counter for Svelte
 
 ## Installation 🔧
 
-npm
+npm (or any other package manager)
 
 ```sh
-npm install @benzara/svelte-animated-counter
-```
-
-or yarn
-
-```sh
-yarn install @benzara/svelte-animated-counter
+npm install -D @benzara/svelte-animated-counter
 ```
 
 ## Features ✨
