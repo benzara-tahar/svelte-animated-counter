@@ -25,30 +25,29 @@
 <section>
 	<h1>@benzara/svelte-animated-counter</h1>
 
-	<p>Tiny animated counter library for svelte</p>
+	<p>A tiny ( {'<'} 2Kb ) animated counter component for svelte</p>
 
 	<h1>demo</h1>
 	<h2>Numeric Values</h2>
 	<AnimatedCounter values={intValues} />
+	<br />
+	<AnimatedCounter initialValue={'2002'} direction="up" values={yearsValues} />
 
-	<h2>Skills</h2>
-	<div
-		style="display:flex;justify-items: start;
-	align-items: center;"
-	>
-		Hello, it's me a [
-		<AnimatedCounter values={skillsValues} direction="up" className="custom-skill" />
+	<h2>String Values</h2>
+	<div class="skills">
+		Hi! Iam a [
+		<AnimatedCounter values={skillsValues} direction="up" class="custom-skill" />
 		] developer
 	</div>
-	<h2>ShortMonths Values</h2>
+	<br />
+
 	<AnimatedCounter direction="up" values={shortMonthsValues} />
-	<h2>LongMonth Values</h2>
+	<br />
 	<AnimatedCounter values={longMonthValues} />
-	<h2>Years Values</h2>
-	<AnimatedCounter initialValue={'2002'} direction="up" values={yearsValues} />
+
 	<h2>Custom Style</h2>
 	<AnimatedCounter
-		className="custom-counter"
+		class="custom-counter"
 		direction="up"
 		initialValue={'2002'}
 		values={yearsValues}
@@ -140,6 +139,12 @@
 		color: rgb(255, 255, 255);
 	}
 
+	.skills {
+		display: flex;
+		justify-items: start;
+		align-items: center;
+		flex-wrap: wrap;
+	}
 	:global(.custom-counter) {
 		display: inline-block;
 		border: 2px solid rgb(12, 12, 12);
