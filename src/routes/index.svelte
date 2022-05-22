@@ -6,7 +6,7 @@
 	import AnimatedCounter from '$lib/AnimatedCounter.svelte';
 
 	const intValues = Array.from({ length: 10 }, (_, i) => new String(i).padStart(2, '0'));
-	const skillsValues = ['Creative', 'FullStak', 'Frontend', 'Backend'];
+	const skillsValues = ['Creative', 'FullStack', 'Frontend', 'Backend'];
 	// prettier-ignore
 	const shortMonthsValues = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 	// prettier-ignore
