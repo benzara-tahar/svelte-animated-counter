@@ -45,7 +45,7 @@
 			index = values.indexOf(lastValue) + (direction === 'up' ? 1 : -1);
 
 			// terminate if we looped through all values && loop is false
-			if (!loop && (index === values.length || index === -1)) {
+			if (!loop && (index === values.length - 1 || index === -1)) {
 				clearInterval(timer);
 				return;
 			}
