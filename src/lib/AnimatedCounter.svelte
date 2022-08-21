@@ -36,7 +36,7 @@
 	$: contentValues = values.join('\n');
 	$: intervalInMs = `${interval}ms`;
 
-	let index = 0;
+	let index = direction === 'up' ? 0 : values.length - 1;
 	let lastValue = initialValue ?? values[index];
 
 	onMount(() => {
@@ -45,7 +45,7 @@
 			index = values.indexOf(lastValue) + (direction === 'up' ? 1 : -1);
 
 			// terminate if we looped through all values && loop is false
-			if (!loop && (index === values.length - 1 || index === -1)) {
+			if (!loop && (index === values.length - 1 || index === 0)) {
 				clearInterval(timer);
 				return;
 			}
