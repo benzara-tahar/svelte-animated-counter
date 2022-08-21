@@ -1,7 +1,7 @@
 {
 	"name": "@benzara/svelte-animated-counter",
 	"description": "A tiny ( < 2Kb ) animated counter component for svelte",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": {
 		"name": "Benzara Tahar Benlahcene",
 		"email": "benzara.tahar@gmail.com",
