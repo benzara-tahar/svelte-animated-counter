@@ -51,7 +51,7 @@ import { AnimatedCounter } from '@benzara/svelte-animated-counter';
 | direction        | 'down'                     | counter direction, can be `up` or `down` defaults to `down`                                         |
 | loop             | `true`                     | whether to loop the counter animation after reaching the end of `values` array , defaults to `true` |
 | ease             | `cubic-bezier(1, 0, 0, 1)` | easing function to use, defaults to `cubic-bezier(1, 0, 0, 1)`                                      |
-| initialValue     | `undefined`                | optional initial value to start the counter from. If not provided, `initlaValue` will be the first item in the `values array` if `direction` === `"up"`, or the last item otherwise | 
+| initialValue     | `undefined`                | optional initial value to start the counter from. If not provided, `initialValue` will be the first item in the `values array` if `direction` === `"up"`, or the last item otherwise | 
 ## Contribution 🖇️
 
 Feel free to fork. If you find a bug or got something great to add make a pull request!
