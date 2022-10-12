@@ -94,7 +94,7 @@
 		You can also look at the list of all the contributors who have participated in this project.
 	</p>
 
-	<a href="https://github.com/benzara-tahar/@benzara-svelte-animated-counter">
+	<a href="https://github.com/benzara-tahar/svelte-animated-counter">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="32"
