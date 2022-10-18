@@ -33,16 +33,16 @@
 	 */
 	export let initialValue: string | number | undefined = undefined;
 
-	$: contentValues = values.join('\n');
+	$: contentValues = values.join('\n\n');
 	$: intervalInMs = `${interval}ms`;
 
 	let index = direction === 'up' ? 0 : values.length - 1;
-	let lastValue = initialValue ?? values[index];
+	let lastIndex = initialValue ? values.indexOf(initialValue) : index;
 
 	onMount(() => {
 		// timer function
 		const start = () => {
-			index = values.indexOf(lastValue) + (direction === 'up' ? 1 : -1);
+			index = lastIndex + (direction === 'up' ? 1 : -1);
 
 			// terminate if we looped through all values && loop is false
 			if (!loop && (index === values.length - 1 || index === 0)) {
@@ -57,7 +57,7 @@
 				index = values.length - 1;
 			}
 
-			lastValue = values[index];
+			lastIndex = index;
 		};
 
 		if (startImmediately) {
@@ -93,6 +93,6 @@
 		position: relative;
 		height: 100%;
 		white-space: pre;
-		top: calc(var(--index) * -1em);
+		top: calc(var(--index) * -2em);
 	}
 </style>
