@@ -29,6 +29,10 @@
 	 */
 	export let ease = 'cubic-bezier(1, 0, 0, 1)';
 	/**
+	 * setting to allow items in values to be displayed randomly
+	 */
+	export let random = false;
+	/**
 	 * optional initial value to start the counter from
 	 */
 	export let initialValue: string | number | undefined = undefined;
@@ -55,6 +59,10 @@
 			}
 			if (loop && index === -1) {
 				index = values.length - 1;
+			}
+
+			if (random) {
+				index = Math.floor(Math.random() * values.length);
 			}
 
 			lastIndex = index;

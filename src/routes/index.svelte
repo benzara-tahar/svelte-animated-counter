@@ -7,6 +7,18 @@
 
 	const intValues = Array.from({ length: 10 }, (_, i) => new String(i).padStart(2, '0'));
 	const skillsValues = ['Creative', 'FullStack', 'Frontend', 'Backend'];
+	const listValues = [
+		'First',
+		'Second',
+		'Third',
+		'Fourth',
+		'Fifth',
+		'Sixth',
+		'Seventh',
+		'Eighth',
+		'Ninth',
+		'Tenth'
+	];
 	// prettier-ignore
 	const shortMonthsValues = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 	// prettier-ignore
@@ -38,6 +50,14 @@
 		Hi! Iam a [
 		<AnimatedCounter values={skillsValues} direction="up" class="custom-skill" />
 		] developer
+	</div>
+	<br />
+
+	<h2>Random Order</h2>
+	<div class="skills">
+		This is the [
+		<AnimatedCounter values={listValues} random class="custom-skill" />
+		] value
 	</div>
 	<br />
 
