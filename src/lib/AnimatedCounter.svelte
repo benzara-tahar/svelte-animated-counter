@@ -12,6 +12,10 @@
 	 */
 	export let interval = 1000;
 	/**
+	 * counter interval for each transition in milliseconds, defaults to `700`
+	 */
+	export let transitionInterval = 700;
+	/**
 	 * whether to start the counter immediately or wait for the `interval` to pass, defaults to `false`
 	 */
 	export let startImmediately = false;
@@ -38,7 +42,7 @@
 	export let initialValue: string | number | undefined = undefined;
 
 	$: contentValues = values.join('\n\n');
-	$: intervalInMs = `${interval}ms`;
+	$: intervalInMs = `${transitionInterval}ms`;
 
 	let index = direction === 'up' ? 0 : values.length - 1;
 	let lastIndex = initialValue ? values.indexOf(initialValue) : index;
