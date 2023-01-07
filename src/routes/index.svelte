@@ -56,7 +56,13 @@
 	<h2>Random Order</h2>
 	<div class="skills">
 		This is the [
-		<AnimatedCounter values={listValues} random class="custom-skill" />
+		<AnimatedCounter
+			interval={1000}
+			transitionInterval={500}
+			values={listValues}
+			random
+			class="custom-skill"
+		/>
 		] value
 	</div>
 	<br />

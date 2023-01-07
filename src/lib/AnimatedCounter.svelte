@@ -7,10 +7,17 @@
 	export let values: Array<string | number> = Array.from({ length: 100 }, (_, i) =>
 		new String(i).padStart(3, '0')
 	);
+
 	/**
 	 * counter interval between each step in milliseconds, defaults to `1000`
 	 */
-	export let interval = 1000;
+	export let duration = 1000;
+
+	/**
+	 * counter interval for each transition in milliseconds, defaults to `700`
+	 */
+	export let delay = 700;
+
 	/**
 	 * whether to start the counter immediately or wait for the `interval` to pass, defaults to `false`
 	 */
@@ -19,26 +26,25 @@
 	/**
 	 * counter direction, can be `up` or `down` defaults to `down`
 	 */
-	export let direction: 'up' | 'down' = 'down';
+	export let direction: 'up' | 'down' | 'random' = 'down';
+
 	/**
 	 * whether to loop the counter animation after reaching the end of  `values` array , defaults to `true`
 	 */
 	export let loop = true;
+
 	/**
 	 * easing function to use, defaults to `cubic-bezier(1, 0, 0, 1)`
 	 */
 	export let ease = 'cubic-bezier(1, 0, 0, 1)';
-	/**
-	 * setting to allow items in values to be displayed randomly
-	 */
-	export let random = false;
+
 	/**
 	 * optional initial value to start the counter from
 	 */
 	export let initialValue: string | number | undefined = undefined;
 
 	$: contentValues = values.join('\n\n');
-	$: intervalInMs = `${interval}ms`;
+	$: intervalInMs = `${delay}ms`;
 
 	let index = direction === 'up' ? 0 : values.length - 1;
 	let lastIndex = initialValue ? values.indexOf(initialValue) : index;
@@ -61,7 +67,7 @@
 				index = values.length - 1;
 			}
 
-			if (random) {
+			if (direction === 'random') {
 				index = Math.floor(Math.random() * values.length);
 			}
 
@@ -71,7 +77,7 @@
 		if (startImmediately) {
 			start();
 		}
-		let timer = setInterval(start, interval);
+		let timer = setInterval(start, duration);
 
 		return () => clearInterval(timer);
 	});
