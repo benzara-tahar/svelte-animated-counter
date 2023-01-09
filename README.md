@@ -33,7 +33,9 @@ import { AnimatedCounter } from '@benzara/svelte-animated-counter';
 	values={Array.from({ length: 122 }, (_, i) => (1900 + i).toString())}
 	class="custom-counter"
 	interval={1000}
+	transitionInterval={700}
 	startImmediately={false}
+	random
 	direction="down"
 	loop={true}
 	ease="cubic-bezier(0.25, 0.1, 0.25, 1)"
@@ -43,15 +45,18 @@ import { AnimatedCounter } from '@benzara/svelte-animated-counter';
 
 ### Configuration Options
 
-| Name             | Default                    | Description                                                                                         |
-| ---------------- | -------------------------- | --------------------------------------------------------------------------------------------------- |
-| values           | `['000',..., '100']`       | list of values to animate                                                                           |
-| interval         | `1000`                     | counter interval between each step in milliseconds, defaults to `1000`                              |
-| startImmediately | `false`                    | whether to start the counter immediately or wait for the `interval` to pass, defaults to `false`    |
-| direction        | 'down'                     | counter direction, can be `up` or `down` defaults to `down`                                         |
-| loop             | `true`                     | whether to loop the counter animation after reaching the end of `values` array , defaults to `true` |
-| ease             | `cubic-bezier(1, 0, 0, 1)` | easing function to use, defaults to `cubic-bezier(1, 0, 0, 1)`                                      |
-| initialValue     | `undefined`                | optional initial value to start the counter from. If not provided, `initialValue` will be the first item in the `values array` if `direction` === `"up"`, or the last item otherwise | 
+| Name               | Default                    | Description                                                                                                                                                                          |
+| ------------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| values             | `['000',..., '100']`       | list of values to animate                                                                                                                                                            |
+| interval           | `1000`                     | counter interval between each step in milliseconds, defaults to `1000`                                                                                                               |
+| transitionInterval | `700`                      | counter interval between each transition step in milliseconds, defaults to `700`                                                                                                     |
+| startImmediately   | `false`                    | whether to start the counter immediately or wait for the `interval` to pass, defaults to `false`                                                                                     |
+| random             | `false`                    | counter jumps to a random index value defaults to `false`                                                                                                                            |
+| direction          | 'down'                     | counter direction, can be `up` or `down` defaults to `down`                                                                                                                          |
+| loop               | `true`                     | whether to loop the counter animation after reaching the end of `values` array , defaults to `true`                                                                                  |
+| ease               | `cubic-bezier(1, 0, 0, 1)` | easing function to use, defaults to `cubic-bezier(1, 0, 0, 1)`                                                                                                                       |
+| initialValue       | `undefined`                | optional initial value to start the counter from. If not provided, `initialValue` will be the first item in the `values array` if `direction` === `"up"`, or the last item otherwise |
+
 ## Contribution 🖇️
 
 Feel free to fork. If you find a bug or got something great to add make a pull request!
